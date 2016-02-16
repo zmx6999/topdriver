@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wuH-Io-aq6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-bc-ifn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="y3z-hX-N3z"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zH8-Bb-r8b"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68w-6H-VFf">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="EzB-GS-9JD"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" id="pDA-0m-oud">
+                                        <button key="customView" opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jYe-3W-OA3" customClass="HomeBottomButton">
+                                            <rect key="frame" x="20" y="13.5" width="78" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="td_logo_gray"/>
+                                            <state key="selected" image="td_logo"/>
+                                            <connections>
+                                                <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSf-We-G6T"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rPt-Yw-jtS"/>
+                                    <barButtonItem style="plain" id="sxU-xe-ymV">
+                                        <button key="customView" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cZn-lC-bH2" customClass="HomeBottomButton">
+                                            <rect key="frame" x="452" y="13" width="23" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon_user"/>
+                                            <state key="selected" image="icon_user_hl"/>
+                                            <connections>
+                                                <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gmb-J3-6hm"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="OTI-5y-UGR">
+                                        <button key="customView" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RMO-0H-25M" customClass="HomeBottomButton">
+                                            <rect key="frame" x="485" y="13.5" width="25" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon_message"/>
+                                            <state key="selected" image="icon_message_hl"/>
+                                            <connections>
+                                                <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BOD-Qn-ab4"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="GsU-zT-Xv1">
+                                        <button key="customView" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gOO-Gx-Ky8" customClass="HomeBottomButton">
+                                            <rect key="frame" x="520" y="12" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon_setting"/>
+                                            <state key="selected" image="icon_setting_hl"/>
+                                            <connections>
+                                                <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q3C-cC-iUY"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="FxT-2Y-62g">
+                                        <button key="customView" opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C0I-5H-9Tq" customClass="HomeBottomButton">
+                                            <rect key="frame" x="555" y="13.5" width="25" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon_fav"/>
+                                            <state key="selected" image="icon_fav_hl"/>
+                                            <connections>
+                                                <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bR-fA-3xi"/>
+                                            </connections>
+                                        </button>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZrH-bc-ifn" secondAttribute="trailing" id="1PS-c3-i5E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="68w-6H-VFf" secondAttribute="bottom" id="6eG-vr-MKH"/>
+                            <constraint firstItem="ZrH-bc-ifn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XD5-25-iwS"/>
+                            <constraint firstItem="68w-6H-VFf" firstAttribute="top" secondItem="ZrH-bc-ifn" secondAttribute="bottom" id="bNW-89-BfW"/>
+                            <constraint firstItem="68w-6H-VFf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dVU-MO-tCW"/>
+                            <constraint firstAttribute="trailing" secondItem="68w-6H-VFf" secondAttribute="trailing" id="q4P-Ge-yeD"/>
+                            <constraint firstItem="ZrH-bc-ifn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="swo-5o-gNm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yzm-we-KIN"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomBar" destination="68w-6H-VFf" id="ah2-cW-Wiz"/>
+                        <outlet property="favoriteButton" destination="C0I-5H-9Tq" id="xDe-fQ-OJp"/>
+                        <outlet property="homeButton" destination="jYe-3W-OA3" id="gGY-yi-TpI"/>
+                        <outlet property="messageButton" destination="RMO-0H-25M" id="Myn-bw-Rrm"/>
+                        <outlet property="settingButton" destination="gOO-Gx-Ky8" id="7KQ-vX-U7A"/>
+                        <outlet property="tableView" destination="ZrH-bc-ifn" id="vzU-17-GC6"/>
+                        <outlet property="userButton" destination="cZn-lC-bH2" id="2v9-c6-7wq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113" y="304"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Upy-bU-jnz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wuH-Io-aq6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XeT-x1-o3g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EQh-nf-587"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKJ-zh-VXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301" y="304"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_fav" width="25" height="21"/>
+        <image name="icon_fav_hl" width="25" height="21"/>
+        <image name="icon_message" width="25" height="18"/>
+        <image name="icon_message_hl" width="25" height="18"/>
+        <image name="icon_setting" width="25" height="25"/>
+        <image name="icon_setting_hl" width="25" height="25"/>
+        <image name="icon_user" width="23" height="23"/>
+        <image name="icon_user_hl" width="23" height="23"/>
+        <image name="td_logo" width="78" height="15"/>
+        <image name="td_logo_gray" width="78" height="15"/>
+    </resources>
+</document>

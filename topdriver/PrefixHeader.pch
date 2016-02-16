@@ -1,0 +1,52 @@
+//
+//  PrefixHeader.pch
+//  topdriver
+//
+//  Created by zmx on 16/1/29.
+//  Copyright © 2016年 zmx. All rights reserved.
+//
+
+
+#import "AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "NetworkTool.h"
+#import "DownloadTool.h"
+#import "ZipArchive.h"
+#import "SVProgressHUD.h"
+#import "BaseViewController.h"
+#import "Masonry.h"
+#import "UIImage+ZMX.h"
+#import "UIView+ZMX.h"
+#import "ZMXButton.h"
+#import "ZMXObject.h"
+#import "User.h"
+#import <SMS_SDK/SMSSDK.h>
+#import "FMDB.h"
+#import "CacheTool.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+
+#define Version ([NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"])
+
+#define SharedNetworkTool [NetworkTool sharedTool]
+#define SharedUser [User sharedUser]
+#define SharedCacheTool [CacheTool sharedTool]
+
+#define BaseURLStr @"http://adm.topdriverclub.com"
+
+#define cachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+
+#define fileManager [NSFileManager defaultManager]
+
+#define SharedDownloadTool [DownloadTool sharedTool]
+
+#define ScreenBounds ([UIScreen mainScreen].bounds)
+#define ScreenSize (ScreenBounds.size)
+#define ScreenWidth (ScreenSize.width)
+#define ScreenHeight (ScreenSize.height)
+
+#define Color(r, g, b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1.0]
+
+#define PasswordDidChangeNotification @"PasswordDidChangeNotification"
+
+#define userDefaults [NSUserDefaults standardUserDefaults]
