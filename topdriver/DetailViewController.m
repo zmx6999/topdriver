@@ -169,7 +169,7 @@
 
 - (NSString *)shareLink {
     if (_shareLink == nil) {
-        _shareLink = [[NSDictionary dictionaryWithContentsOfFile:[self.message.cachePlistContent stringByAppendingPathComponent:@"config.plist"]] objectForKey:@"title"];
+        _shareLink = [[NSDictionary dictionaryWithContentsOfFile:[self.message.cachePlistContent stringByAppendingPathComponent:@"config.plist"]] objectForKey:@"link"];
     }
     return _shareLink;
 }
@@ -441,19 +441,22 @@
         CGFloat dy = self.scrollView.contentOffset.y;
         for (DetailIndex *index in self.indexes) {
             if ([index.className isEqualToString:@"TDFadeImageView"]) {
+                DetailImageIndex *imageIndex0 = index.images[0];
+                DetailImageIndex *imageIndex1 = index.images[1];
+                
                 if (dy < index.y - (ScreenHeight - index.h) * 0.5) {
-                    [UIView animateWithDuration:[index.images[0] duration] animations:^{
+                    [UIView animateWithDuration:imageIndex0.duration animations:^{
                         [index.imageViews[0] setAlpha:0];
                     } completion:^(BOOL finished) {
-                        [UIView animateWithDuration:[index.images[1] duration] animations:^{
+                        [UIView animateWithDuration:imageIndex1.duration animations:^{
                             [index.imageViews[1] setAlpha:1];
                         }];
                     }];
                 } else {
-                    [UIView animateWithDuration:[index.images[1] duration] animations:^{
+                    [UIView animateWithDuration:imageIndex1.duration animations:^{
                         [index.imageViews[1] setAlpha:0];
                     } completion:^(BOOL finished) {
-                        [UIView animateWithDuration:[index.images[0] duration] animations:^{
+                        [UIView animateWithDuration:imageIndex0.duration animations:^{
                             [index.imageViews[0] setAlpha:1];
                         }];
                     }];

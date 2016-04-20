@@ -12,15 +12,20 @@
 
 + (UIImage *)imageWithImage:(UIImage *)image tintColor:(UIColor *)color {
     UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+    
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(context, 0, image.size.height);
     CGContextScaleCTM(context, 1, -1);
-    [color set];
-    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+    
+    CGRect rect = (CGRect){CGPointZero, image.size};
     CGContextClipToMask(context, rect, image.CGImage);
+    [color set];
     UIRectFillUsingBlendMode(rect, kCGBlendModeNormal);
+    
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(context);
     UIGraphicsEndImageContext();
+    
     return newImage;
 }
 

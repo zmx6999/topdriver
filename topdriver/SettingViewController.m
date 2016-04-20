@@ -35,12 +35,12 @@
 }
 
 - (long long)fetchCacheSize {
-    CGFloat s = 0;
-    NSArray *paths = [fileManager subpathsOfDirectoryAtPath:cachePath error:nil];
+    long long size = 0;
+    NSArray *paths = [[NSFileManager defaultManager] subpathsAtPath:cachePath];
     for (NSString *path in paths) {
-        s += [[fileManager attributesOfItemAtPath:[cachePath stringByAppendingPathComponent:path] error:nil] fileSize];
+        size += [[[NSFileManager defaultManager] attributesOfItemAtPath:[cachePath stringByAppendingPathComponent:path] error:nil] fileSize];
     }
-    return s;
+    return size;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -125,11 +125,11 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"%@", cachePath);
     if (buttonIndex == 1) {
-        NSArray *paths = [fileManager subpathsOfDirectoryAtPath:cachePath error:nil];
+        NSArray *paths = [[NSFileManager defaultManager] subpathsAtPath:cachePath];
         for (NSString *path in paths) {
-            [fileManager removeItemAtPath:[cachePath stringByAppendingPathComponent:path] error:nil];
+            [[NSFileManager defaultManager] removeItemAtPath:[cachePath stringByAppendingPathComponent:path] error:nil];
         }
-        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:0 inSection:2]] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:2]] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 @end

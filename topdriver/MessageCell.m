@@ -24,9 +24,9 @@
     
     [self.coverView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BaseURLStr, message.cover_pic]]];
     
-    __weak typeof(self.titleView) weakTitleView = self.titleView;
+    __weak typeof(self) weakSelf = self;
     [self.titleView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BaseURLStr, message.title_pic]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        weakTitleView.image = [UIImage imageWithImage:image tintColor:message.visited ?[UIColor grayColor] : [UIColor blackColor]];
+        weakSelf.titleView.image = [UIImage imageWithImage:image tintColor:message.visited ?[UIColor grayColor] : [UIColor blackColor]];
     }];
 }
 

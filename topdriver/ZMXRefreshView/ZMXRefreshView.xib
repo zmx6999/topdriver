@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pox-ab-Rlw" customClass="ZMXRefreshView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ds-Dt-aai">
+                    <rect key="frame" x="280.5" y="22.5" width="39.5" height="19.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdR-K4-Jfw">
+                    <rect key="frame" x="280" y="47" width="31" height="14.5"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="W7h-cu-zmq">
+                    <rect key="frame" x="250" y="22" width="20" height="20"/>
+                    <animations/>
+                </activityIndicatorView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7Ds-Dt-aai" firstAttribute="centerX" secondItem="pox-ab-Rlw" secondAttribute="centerX" id="3ga-XX-tiJ"/>
+                <constraint firstItem="W7h-cu-zmq" firstAttribute="centerY" secondItem="pox-ab-Rlw" secondAttribute="centerY" id="NOO-V2-zwN"/>
+                <constraint firstItem="PdR-K4-Jfw" firstAttribute="top" secondItem="7Ds-Dt-aai" secondAttribute="bottom" constant="5" id="PMz-k8-eVu"/>
+                <constraint firstItem="PdR-K4-Jfw" firstAttribute="leading" secondItem="7Ds-Dt-aai" secondAttribute="leading" id="QHh-bf-U24"/>
+                <constraint firstItem="7Ds-Dt-aai" firstAttribute="centerY" secondItem="pox-ab-Rlw" secondAttribute="centerY" id="RLX-yj-MoB"/>
+                <constraint firstItem="PdR-K4-Jfw" firstAttribute="leading" secondItem="W7h-cu-zmq" secondAttribute="trailing" constant="10" id="Wiw-ko-DEz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="indicatorView" destination="W7h-cu-zmq" id="g1k-c6-7OX"/>
+                <outlet property="timeLabel" destination="PdR-K4-Jfw" id="vFd-Od-Nlj"/>
+                <outlet property="titleCenterConstarint" destination="RLX-yj-MoB" id="CmV-mC-Rff"/>
+                <outlet property="titleLabel" destination="7Ds-Dt-aai" id="9zE-U3-Ykc"/>
+            </connections>
+            <point key="canvasLocation" x="343" y="326"/>
+        </view>
+    </objects>
+</document>

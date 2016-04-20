@@ -34,14 +34,14 @@ static NSString *ID = @"share";
 
 - (NSArray *)iconNames {
     if (_iconNames == nil) {
-        _iconNames = @[@"分享图标_05", @"分享图标_07", @"分享图标_09", @"分享图标_11", @"分享图标_22", @"分享图标_20", @"分享图标_18"];
+        _iconNames = @[@"分享图标_05", @"分享图标_07", @"分享图标_09", @"分享图标_11", @"分享图标_22", @"分享图标_20", @"分享图标_18", @"分享图标_23"];
     }
     return _iconNames;
 }
 
 - (NSArray *)titles {
     if (_titles == nil) {
-        _titles = @[@"腾讯微博", @"微信", @"微信朋友圈", @"新浪微博", @"豆瓣", @"短信", @"邮箱"];
+        _titles = @[@"腾讯微博", @"微信", @"微信朋友圈", @"新浪微博", @"豆瓣", @"短信", @"邮箱", @"复制链接"];
     }
     return _titles;
 }
@@ -70,12 +70,18 @@ static NSString *ID = @"share";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[self.shares[indexPath.item]] content:self.shareTitle image:self.shareIcon location:nil urlResource:[[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeDefault url:self.shareLink] presentedController:[self getViewController] completion:^(UMSocialResponseEntity *response){
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            [SVProgressHUD showSuccessWithStatus:@"分享成功"];
-            [self cancel:nil];
-        }
-    }];
+    if (indexPath.item < self.iconNames.count - 1) {
+        [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[self.shares[indexPath.item]] content:self.shareTitle image:self.shareIcon location:nil urlResource:[[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeVideo url:self.shareLink] presentedController:[self getViewController] completion:^(UMSocialResponseEntity *response){
+            if (response.responseCode == UMSResponseCodeSuccess) {
+                [SVProgressHUD showSuccessWithStatus:@"分享成功"];
+                [self cancel:nil];
+            }
+        }];
+    } else {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = self.shareLink;
+        [self cancel:nil];
+    }
 }
 
 @end

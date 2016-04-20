@@ -1,0 +1,46 @@
+PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
+  - FMDB (2.6):
+    - FMDB/standard (= 2.6)
+  - FMDB/standard (2.6)
+  - Masonry (0.6.4)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - SSZipArchive (1.1)
+  - SVProgressHUD (1.1.3)
+  - UMengSocial (4.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - FMDB
+  - Masonry
+  - SDWebImage
+  - SSZipArchive
+  - SVProgressHUD
+  - UMengSocial
+
+SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SSZipArchive: de3d215ab73f87db627f81f2ce24f1731e3886c3
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  UMengSocial: aba7296602310385114d82c255539a7bef3b7ab0
+
+COCOAPODS: 0.39.0

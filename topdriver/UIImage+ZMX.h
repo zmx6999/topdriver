@@ -12,6 +12,4 @@
 
 + (UIImage *)imageWithImage:(UIImage *)image tintColor:(UIColor *)color;
 
-+ (UIImage *)imageWithImage:(UIImage *)image text:(NSString *)text textColor:(UIColor *)textColor;
-
 @end
